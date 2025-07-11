@@ -18,6 +18,11 @@ app.use(cors({
     credentials:true
 }))
 
+// simple api
+app.get("/api/hello", (req, res) => {
+  res.status(200).json({ message: "Hello from backend!" });
+});
+
 app.use("/api/auth", authRouter )
 app.use("/api/user", userRouter )
 app.use("/api/listing",listingRouter )
